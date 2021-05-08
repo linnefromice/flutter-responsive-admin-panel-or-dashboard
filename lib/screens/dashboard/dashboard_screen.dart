@@ -1,6 +1,7 @@
 import 'package:admin/constants.dart';
 import 'package:admin/screens/components/chart.dart';
 import 'package:admin/screens/components/header.dart';
+import 'package:admin/screens/components/storage_info_card.dart';
 import 'package:flutter/material.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -40,7 +41,14 @@ class DashboardScreen extends StatelessWidget {
                             fontWeight: FontWeight.w500
                           )
                         ),
-                        Chart()
+                        SizedBox(height: defaultPadding),
+                        Chart(),
+                        StorageInfoCard(
+                          svgSrc: "assets/icons/Documents.svg",
+                          title: "Documents Files",
+                          amountOfFiles: "1.3GB",
+                          numOfFiles: 1328,
+                        )
                       ],
                     ),
                   )

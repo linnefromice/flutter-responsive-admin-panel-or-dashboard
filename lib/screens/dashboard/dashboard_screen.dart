@@ -11,6 +11,7 @@ class DashboardScreen extends StatelessWidget {
       child: SingleChildScrollView(
         padding: EdgeInsets.all(defaultPadding),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Header(),
             SizedBox(height: defaultPadding),
@@ -27,12 +28,13 @@ class DashboardScreen extends StatelessWidget {
                 Expanded(
                   flex: 2,
                   child: Container(
-                    height: 500,
+                    padding: EdgeInsets.all(defaultPadding),
                     decoration: BoxDecoration(
                       color: secondaryColor,
                       borderRadius: BorderRadius.all(Radius.circular(10)),
                     ),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           "Storage Details",
@@ -48,7 +50,25 @@ class DashboardScreen extends StatelessWidget {
                           title: "Documents Files",
                           amountOfFiles: "1.3GB",
                           numOfFiles: 1328,
-                        )
+                        ),
+                        StorageInfoCard(
+                          svgSrc: "assets/icons/media.svg",
+                          title: "Media Files",
+                          amountOfFiles: "15.3GB",
+                          numOfFiles: 1328,
+                        ),
+                        StorageInfoCard(
+                          svgSrc: "assets/icons/folder.svg",
+                          title: "Other Files",
+                          amountOfFiles: "1.3GB",
+                          numOfFiles: 1328,
+                        ),
+                        StorageInfoCard(
+                          svgSrc: "assets/icons/unknown.svg",
+                          title: "Unknown",
+                          amountOfFiles: "1.3GB",
+                          numOfFiles: 140,
+                        ),
                       ],
                     ),
                   )

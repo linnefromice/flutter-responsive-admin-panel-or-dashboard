@@ -1,8 +1,11 @@
 import 'package:admin/constants.dart';
+import 'package:admin/models/RecentFile.dart';
 import 'package:admin/screens/components/header.dart';
 import 'package:admin/screens/components/my_files.dart';
+import 'package:admin/screens/components/recent_files.dart';
 import 'package:admin/screens/components/storage_details.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class DashboardScreen extends StatelessWidget {
   @override
@@ -20,7 +23,13 @@ class DashboardScreen extends StatelessWidget {
               children: [
                 Expanded(
                   flex: 5,
-                  child: MyFiles()
+                  child: Column(
+                    children: [
+                      MyFiles(),
+                      SizedBox(height: defaultPadding),
+                      RecentFiles(),
+                    ],
+                  )
                 ),
                 SizedBox(width: defaultPadding),
                 Expanded(
